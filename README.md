@@ -9,25 +9,6 @@
 - Complete this lab which challenges them on what they have learned about arrays up to this point.
 - This should actually reflect what it is we're looking to cover here (similar to the outlines provided in the labs I mentioned in the outline below).
 
-## What the student can do at this point
-
-- Create variables and constants
-- Is familiar with type annotations, type inference and string interpolation.
-- Can create functions with return types.
-- Is familiar with the String, Int, Double, and Bool type.
-- Can perform arithmetic operations on Int and Double.
-- Understands if and else clause statements.
-- Can create and use Arrays.
-- Can iterate over an Array using a for-in loop.
-- Can iterate over an Array calling enumerate().
-- Work with the following methods on arrays:
-
-  - `append()`
-  - `insert(_:atIndex:)`
-  - `removeAtIndex()`
-  - _subscript syntax_ with arrays
-  - `count`
-  - `isEmpty`
 
 ## Outline / Notes
 
