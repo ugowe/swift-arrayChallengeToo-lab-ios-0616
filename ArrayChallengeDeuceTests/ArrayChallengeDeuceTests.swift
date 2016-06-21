@@ -6,31 +6,50 @@
 //  Copyright © 2016 Flatiron School. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 @testable import ArrayChallengeDeuce
 
-class ArrayChallengeDeuceTests: XCTestCase {
+class ArrayChallengeDeuceTests: QuickSpec {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    override func spec() {
+        
+        let testVC = ViewController()
+        
+        let numberList:[Int] = [23,36,84,123,834,12,5,9,92,274]
+        let finalList:[Int] = [23, 123, 5, 9]
+
+        
+        describe("generateNumbers(_:)") {
+            
+            it("Returns a list of numbers with even numbers removed") {
+                
+                let oddList = testVC.generateNumbers(numberList)
+                
+                expect(oddList.count).to(equal(4))
+                
+                expect(oddList[0]).to(equal(23))
+                
+                expect(oddList[3]).to(equal(9))
+                
+                expect(oddList).to(equal(finalList))
+                
+            }
+            
         }
+        
+        describe("viewDidLoad()") {
+            
+            it("Should call generateNumbers(_:) and assign the return value to the oddNumbers variable on the ViewController") {
+                
+                testVC.viewDidLoad()
+                
+                expect(testVC.generateNumbers).to(equal(finalList))
+                
+            }
+            
+        }
+        
     }
     
 }
