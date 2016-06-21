@@ -1,6 +1,6 @@
 # Array Challenge Deuce
 
-![HAL](images/HAL9000.png)
+![HAL](http://i.imgur.com/48iTo2B.png?1)
 
 > I'm sorry, Dave. I'm afraid I can't do that. ~[HAL 9000](https://en.wikipedia.org/wiki/HAL_9000)
 
