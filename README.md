@@ -1,8 +1,8 @@
 # Array Challenge Deuce
 
-![HAL](http://i.imgur.com/48iTo2B.png?1)
+![haveWhatSheshaving](http://i.imgur.com/anXw03E.png?1)
 
-> I'm sorry, Dave. I'm afraid I can't do that. ~[HAL 9000](https://en.wikipedia.org/wiki/HAL_9000)
+> [to waiter] I'll have what she's having. ~[Estelle Reiner](https://en.wikipedia.org/wiki/Estelle_Reiner)
 
 ## Learning Objectives
 
@@ -12,49 +12,51 @@
 
 ## Instructions
 
-You have a friend who is really bad at maths, but knew you were a great programmer, so asked if you could help them with a problem they need an answer to.
+Lets pretend for this lab that we own a deli.
 
-Their teacher gave them a list of numbers:
+![deli](http://i.imgur.com/4CElvfV.png?1)
 
-- 23
-- 36
-- 84
-- 123
-- 7834
-- 12
-- 5
-- 9
-- 92
-- 274
+Our deli is one of the busiest delis in New York City (therefore one of the busiest on Earth). Our job is to create a system that represents a line. Someone enters the store, they enter our line. Our server then needs to able to state "Now serving x!" x being the individuals name. There's one catch! If our customer is either Meg Ryan or Billy Crystal, they will jump to the front of the line.
 
-Their task, and now your task, is to make a new list of the numbers in this list that are odd numbers, and remove the even ones. When you have the final list, remove any numbers above 50 from it and print the values and size of the list before and after doing this.
+![harrySally](http://i.imgur.com/prEsj71.jpg?1)  
 
-1. You should add your code into the `viewDidLoad()` method in the _ViewController.swift_ file.
-2. Create a function which will take in one argument of type [`Int`] and which returns one array of type [`Int`]. This array will represent your completed list of numbers shown above. For the tests to work, your methods signature should be this: `generateNumbers(_:numberList:)`.
-3. Call this function in `viewDidLoad()` and assign the return value of it to the `oddNumbers` variable which has already been created for you (above the `viewDidLoad()` method.
+- (**1**) `addName(_:toDeliLine:)` should take in two arguments, one of type `String`, the other being of type [`String`]. This function should return back an array of type [`String`].
+- (**2**) `deliLineDescription(_:)` should take in an array of type [`String`] as an argument and return a `String`.
+- (**3**) `servingNextCustomerInLine(_:)` takes in one argument of type [`String`], and returns a `String`.
 
-**Quick Note**. How do you read that method signature included in instruction #2? The name of this function should be `generateNumbers`, that underscore `_` means that the first argument to this function will have **NO** external name when it's called, which happens by default. The second argument to this function will have an external name of `numberList` when it's called.
 
-Here's an example.
+
+These three functions should be defined in the `ViewController.swift` file.  
+
+(**1**) - This method should first create a new Deli Line which is equal to the Deli Line that is passed in as an argument to this method. Should this new array of type [`String`] be created with the `let` or `var` keyword? Add the name given to us as an argument to this method which is of type `String` to this newly made array. Return this array (which now includes the name) back to the caller of the method. ONE CAVEAT! If the name passed in is "Meg Ryan" or "Billy Crystal" they are immediately brought to the front of the line and not added to the end of the line. Make sure you account for that otherwise we will get very bad press (also.. your tests won't pass).  
+
+(**2**) - This method will take in an array in as an argument of type [`String`]. This represents a deli line. We need to return back to the caller of this method a `String`.  
+* If there are no customers in this line, return the string "The line is currently empty."
+* Otherwise, return a formatted string beginning with the "The line is:", and appending every customer in the line on a new line `\n` beginning with their number in the line. For example
+
+"The line is:  
+1. Albert Einstein  
+2. Cher  
+3. Neil deGrasse Tyson  
+4. Yoshi"
+ 
+
+(**3**) - This method takes one argument of type [`String`] and returns a `String`. The `[String`] array given to us an argument to this method is our del line. But what should our `String` look like that we're required to return? If we have a line as follows
+```swift
+let line = ["Bob", "Barry", "Becca"]
+```
+The `String` to be returned back to the caller should be as follows:  
+"Now serving Bob!"  
+
+If the line is empty, it should produce the following `String` and return it back to the caller:
+  
+"There is no-one to be served!"  
+
+This method should also do one more thing. If the line wasn't empty and it's able to serve someone, it should remove that person from the front of the line as well. Continuing with this example, the line should then wind up looking like this:
 
 ```swift
-func printFavoriteNames(names: [String], colors: [String], numbers: [Int]) {
-    // printing all my favorite names, colors and numbers
-}
+["Barry", "Becca"]
 ```
 
-We call on this function like so:
-
-```swift
-let names = ["Jim", "Bran", "Sansa"]
-let colors = ["Red", "Blue", "Green"]
-let numbers = [7, 742, 5]
-
-printFavoriteNames(names, colors: colors, numbers: numbers)
-```
-
-Notice how when calling the function, the first argument's external name is not there but colors: and numbers: is. So if we were to type out this method signature to someone, we would do so like this:
-
-`printFavoriteNames(_:colors:numbers:)`
 
 [View this lesson on Learn.co](https://learn.co/lessons/ArrayChallengeTwo)
