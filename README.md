@@ -20,43 +20,46 @@ Our deli is one of the busiest delis in New York City (therefore one of the busi
 
 ![harrySally](http://i.imgur.com/prEsj71.jpg?1)  
 
-- (**1**) `addName(_:toDeliLine:)` should take in two arguments, one of type `String`, the other being of type [`String`]. This function should return back an array of type [`String`].
-- (**2**) `deliLineDescription(_:)` should take in an array of type [`String`] as an argument and return a `String`.
-- (**3**) `servingNextCustomerInLine(_:)` takes in one argument of type [`String`], and returns a `String`.
 
+* **1**. Implement this function - `addNameToDeliLine(name:)` 
+	* It should take in a `String` as one of its arguments (labeled as name) and return a `String`. 
+	* In its implementation, it should add the name passed into this function to the `deliLine` property on the `ViewController` with a few conditions:
+		* If the persons name is Billy Crystal, they should be positioned at the front of the line.
+		* If the persons name is Meg Ryan, they should be positioned at the front of the line.
+		* Everyone else should be added to the back of the line and wait their turn.
+	* The `String` this function should return is based on the following conditions (x represents the individuals name, y represents their position in line).
+		* If the person is first in line: "Welcome x, you're first in line!"
+		* If the persons name is Billy Crystal: "Welcome Billy! You can sit wherever you like."
+		* If the persons name is Meg Ryan: "Welcome Meg! You can sit wherever you like."
+		* Every other situation: "Welcome x, you're number y in line"
+		
 
+* **2**. Implement this function - `nowServing()`
+	* It should take in no arguments but return back a `String`.
+	* In its implementation the `String` that is returned is based on the following conditions (x represents the individuals name):
+		* If the line is empty: "There is no-one to be served."
+		* If the line isn't empty: "Now serving x!"
+	* This function should do one more thing. It should remove the individual from the deliLine that it's about to serve.
+	
 
-These three functions should be defined in the `ViewController.swift` file.  
+* **3**. Implement this function - `deliLineDescription()`
+	* This function should take no arguments but return back a `String`.
+	* The `String` to be returned back is based on the following conditions:
+		* If the line is empty: "The line is currently empty."
+		* Otherwise, return a `String` beginning with the "The line is:", and appending every customer in the line on a new line `\n` beginnign with their number in the line. For example, if our line was represented as:
+		
+```swift
+var line = ["Albert Einstein", "Cher", "Neil deGrasse Tyson", "Yoshi"]
+```
 
-(**1**) - This method should first create a new Deli Line which is equal to the Deli Line that is passed in as an argument to this method. Should this new array of type [`String`] be created with the `let` or `var` keyword? Add the name given to us as an argument to this method which is of type `String` to this newly made array. Return this array (which now includes the name) back to the caller of the method. ONE CAVEAT! If the name passed in is "Meg Ryan" or "Billy Crystal" they are immediately brought to the front of the line and not added to the end of the line. Make sure you account for that otherwise we will get very bad press (also.. your tests won't pass).  
-
-(**2**) - This method will take in an array in as an argument of type [`String`]. This represents a deli line. We need to return back to the caller of this method a `String`.  
-* If there are no customers in this line, return the string "The line is currently empty."
-* Otherwise, return a formatted string beginning with the "The line is:", and appending every customer in the line on a new line `\n` beginning with their number in the line. For example
+The `String` to be returned should look like this:
 
 "The line is:  
 1. Albert Einstein  
 2. Cher  
 3. Neil deGrasse Tyson  
 4. Yoshi"
- 
 
-(**3**) - This method takes one argument of type [`String`] and returns a `String`. The `[String`] array given to us an argument to this method is our del line. But what should our `String` look like that we're required to return? If we have a line as follows
-```swift
-let line = ["Bob", "Barry", "Becca"]
-```
-The `String` to be returned back to the caller should be as follows:  
-"Now serving Bob!"  
-
-If the line is empty, it should produce the following `String` and return it back to the caller:
-  
-"There is no-one to be served!"  
-
-This method should also do one more thing. If the line wasn't empty and it's able to serve someone, it should remove that person from the front of the line as well. Continuing with this example, the line should then wind up looking like this:
-
-```swift
-["Barry", "Becca"]
-```
-
+		
 
 [View this lesson on Learn.co](https://learn.co/lessons/ArrayChallengeTwo)
