@@ -2,7 +2,7 @@
 
 ![haveWhatSheshaving](http://i.imgur.com/anXw03E.png?1)
 
-> [to waiter] I'll have what she's having. ~[Estelle Reiner](https://en.wikipedia.org/wiki/Estelle_Reiner)
+> [to waiter] I'll have what she's having. -[Estelle Reiner](https://en.wikipedia.org/wiki/Estelle_Reiner)
 
 ## Learning Objectives
 
@@ -18,7 +18,6 @@ Lets pretend for this lab that we own a deli.
 
 Our deli is one of the busiest delis in New York City (therefore one of the busiest on Earth). Our job is to create a system that represents a line. Someone enters the store, they enter our line. Our server then needs to able to state "Now serving x!" x being the individuals name. There's one catch! If our customer is either Meg Ryan or Billy Crystal, they will jump to the front of the line.
 
-![harrySally](http://i.imgur.com/prEsj71.jpg?1)  
 
 
 * **1**. Implement this function - `addNameToDeliLine(name:)` 
