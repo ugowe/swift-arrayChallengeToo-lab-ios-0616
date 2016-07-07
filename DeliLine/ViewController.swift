@@ -21,27 +21,5 @@ class ViewController: UIViewController {
     }
     
 
-    // 1.
-    func addNameToDeliLine(name: String) -> String {
-        
-        switch name {
-        case "Billy Crystal":
-            deliLine.insert(name, at: 0)
-            return "Welcome Billy! You can sit wherever you like."
-        case "Meg Ryan":
-            deliLine.insert(name, at: 0)
-            return "Welcome Meg! You can sit wherever you like."
-        default:
-            deliLine.append(name)
-        }
-        
-        switch deliLine.count {
-        case 1:
-            return "Welcome \(name), you're first in line!"
-        default:
-            return "Welcome \(name), you're number \(deliLine.count) in line."
-        }
-        
-    }
     
 }
